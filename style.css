@@ -1,0 +1,84 @@
+:root {
+    --purple: #8a5362;
+    --blue: #565681;
+    --black: #23211f;
+    --red: #ca3d22;
+    --pink: #e9c7be;
+}
+
+img {
+    width: 100%;
+}
+
+.header {
+    background-color: var(--blue);
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    max-width: 5rem;
+    max-height: 4rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (min-width: 768px) {
+    .logo {
+        max-width: 7rem;
+        max-height: 4rem;
+    }
+}
+
+.watch-wrapper {
+    position: relative;
+}
+
+.watch {
+    max-width: 10rem;
+    object-fit: cover;
+    object-position: center;
+}
+.time {
+    font-size: .55rem;
+}
+
+.button-group .btn-black {
+    background-color: var(--black);
+    width: 4rem;
+    height: 2rem;
+}
+.button-group .btn-red {
+    background-color: var(--red);
+    width: 4rem;
+    height: 2rem;
+}
+.button-group .btn-blue {
+    background-color: var(--blue);
+    width: 4rem;
+    height: 2rem;
+}
+.button-group .btn-purple {
+    background-color: var(--purple);
+    width: 4rem;
+    height: 2rem;
+}
+
+
+@media (min-width: 768px) {
+    main {
+        padding: 4rem 0;
+    }
+
+    .desc {
+        max-width: 500px;
+        text-align: justify;
+    }
+
+    .watch {
+        max-width: 290px;
+    }
+    .time {
+        font-size: .75rem;
+    }
+}
