@@ -8,26 +8,53 @@ clrBtns.forEach(btn => {
     });
 });
 
-const time = document.querySelector('.time');
+//  features 
 
-function timeCountdown() {
+const watchDisplay = document.querySelector('.watch-display');
+let error = 0;
 
-    return setInterval(() => {
-        let hour = new Date().getHours();
-    let minutes = new Date().getMinutes();
+document.addEventListener('DOMContentLoaded', showWatchDisplay());
+document.querySelector('.time-btn').addEventListener('click', () => {
+    error = 0;
+    showWatchDisplay();
+});
 
-    if(minutes < 10) {
-        minutes = `0${minutes}`;
-    };
+document.querySelector('.heart-rate-btn').addEventListener('click', () => {
+    error++;
+    showWatchDisplay();
+})
+
+
+function showWatchDisplay() {
+    const time = setInterval(() => {
+        if(error > 0) {
+            clearInterval(time);
+            showHeartRate();
+        } else {
+            showTime();
+        }
     
-    let period;
+    }, 1000);
+}
+
+function showTime() {
+
+    let hour = new Date().getHours();
+    let minute = new Date().getMinutes();
+
+    let timeInitials;
+
     if(hour < 13) {
-        period = 'AM';
+        timeInitials = 'AM';
     } else {
-        period = 'PM';
+        timeInitials = 'PM';
     };
 
-    switch (hour) {
+    if(minute < 10) {
+        minute = `0${minute}`;
+    };
+
+    switch(hour) {
         case 13:
             hour = 1;
             break;
@@ -46,8 +73,9 @@ function timeCountdown() {
         case 18:
             hour = 6;
             break;
-        case  19:
+        case 19:
             hour = 7;
+            break;
         case 20:
             hour = 8;
             break;
@@ -57,29 +85,22 @@ function timeCountdown() {
         case 22:
             hour = 10;
             break;
-        case  23:
+        case 23:
             hour = 11;
-        case  0:
+            break;
+        case 0:
             hour = 12;
+            break;
     };
 
-    time.textContent = `${hour} : ${minutes} ${period}`;
-    })
-
+    watchDisplay.innerHTML = `
+        <span class="text-warning">${hour} : ${minute} ${timeInitials}</span>
+    `;
 };
 
-function heartRate() {
-    return time.textContent = 120;
-}
-
-let countdown = timeCountdown();
-
-const timeBtn = document.querySelector('.timeBtn');
-timeBtn.addEventListener('click', () => countdown = timeCountdown());
-
-const heartRateBtn = document.querySelector('.heartRateBtn');
-heartRateBtn.addEventListener('click', () => {
-    clearInterval(countdown);
-    countdown = heartRate();
-})
-
+function showHeartRate() {
+    watchDisplay.innerHTML = `
+        <span class="text-warning pe-1"><i class="fa-solid fa-heart-pulse"></i></span>
+        <span class="text-warning">120</span>
+    `;
+};

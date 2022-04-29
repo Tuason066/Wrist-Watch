@@ -8,7 +8,8 @@
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/c2f1b056af.js" crossorigin="anonymous"></script>
     <!-- style -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,15 +20,15 @@
             <img class="logo mx-auto" src="./amazon.png" alt="amazon logo">
         </div>
     </header>
-    <main class="container">
+    <main class="container py-4">
         <div class="row">
-            <div class="col-md-4 py-4 text-center">
+            <div class="col-md-4 text-center">
                 <div class="watch-wrapper">
                     <img class="watch" src="./img/black.png" alt="watch">
-                    <span class="time position-absolute top-50 start-50 translate-middle text-warning"></span>
+                    <div class="watch-display position-absolute top-50 start-50 translate-middle"></div>
                 </div>
             </div>
-            <div class="col-md-8 pb-4 desc">
+            <div class="col-md-8 pt-4 desc">
                 <h2 class="title">FitBit 19 - The Smartest Watch</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ullam possimus dicta, quo provident fugit deleniti nobis in ipsa sint.</p>
                 <h6 class="color">Select Color</h6>
@@ -39,8 +40,8 @@
                 </div>
                 <h6 class="features mt-4">Features</h6>
                 <div class="button-group feature-btns">
-                    <button class="timeBtn btn btn-sm btn-secondary px-4">Time</button>
-                    <button class="heartRateBtn btn btn-sm btn-secondary px-4">Heart Rate</button>
+                    <button class="time-btn btn btn-sm btn-secondary px-4">Time</button>
+                    <button class="heart-rate-btn btn btn-sm btn-secondary px-4">Heart Rate</button>
                 </div>
                 <button class="btn btn bg-warning btn-lg mt-3">BUY NOW</button>
             </div>

@@ -39,9 +39,6 @@ img {
     object-fit: cover;
     object-position: center;
 }
-.time {
-    font-size: .55rem;
-}
 
 .button-group .btn-black {
     background-color: var(--black);
@@ -64,21 +61,28 @@ img {
     height: 2rem;
 }
 
-
 @media (min-width: 768px) {
     main {
         padding: 4rem 0;
     }
 
     .desc {
-        max-width: 500px;
+        width: 100%;
+        max-width: 600px;
         text-align: justify;
+        padding: 1rem !important;
     }
 
     .watch {
         max-width: 290px;
     }
-    .time {
-        font-size: .75rem;
-    }
 }
+
+.watch-display {
+    font-size: .65rem;
+}
+ @media (min-width: 768px) {
+    .watch-display > * {
+        font-size: 1rem;
+    }
+ }
